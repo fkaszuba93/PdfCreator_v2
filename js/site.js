@@ -1,6 +1,13 @@
 
 $('#saveButton').click(() => {
+    var content = $('#documentContainer').html();
+    var blob = new Blob([content], {type: 'text/html'});
     
+    var a = document.createElement('a');
+    a.href = window.URL.createObjectURL(blob);
+    a.download = 'Dokument.html';
+    a.click();
+    a.remove();
 });
 
 var selectedElement, count = 0;
