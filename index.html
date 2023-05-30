@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Creator</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand">PDF Creator</a>
+                <div class="mr-auto"></div>
+                <div class="d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <button id="saveButton" class="btn btn-success btn-lg">Zapisz</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="row mt-5">
+                <div class="col-lg-3">
+                    <div class="form-group px-4 py-2">
+                        <label for="elementType">Typ:</label>
+                        <select id="elementType" name="elementType" class="form-control">
+                            <option value="text" selected>Tekst</option>
+                            <option value="checkbox">Checkbox</option>
+                            <option value="radio">Radio</option>
+                        </select>
+                    </div>
+                    <div class="form-group px-4 py-2">
+                        <label for="elementText">Tekst:</label>
+                        <input type="text" id="elementText" class="form-control" />
+                    </div>
+                    <div class="form-group px-4 py-2">
+                        <label for="elementId">ID:</label>
+                        <input type="text" id="elementId" class="form-control" />
+                    </div>
+                    <div class="text-center mt-4">
+                        <button id="addElementButton" class="btn btn-success">Dodaj element</button>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button id="deleteElementButton" class="btn btn-danger" disabled>Usuń element</button>
+                    </div>
+                </div>
+                <div id="documentContainer" class="col-lg-9 border border-2 border-dark shadow">
+                    <div id="documentContent" style="font-size: 2rem; font-family: sans-serif; margin: 3rem;"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>
